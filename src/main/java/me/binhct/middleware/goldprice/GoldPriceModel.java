@@ -11,13 +11,16 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
 import ch.qos.logback.classic.Level;
 
+@Component
 public class GoldPriceModel {
     public static final GoldPriceModel Instance = new GoldPriceModel();
     private static final String PNJ = "pnj";
     private static final String SJC = "sjc";
-    private static final String PRICE = "price";
+    private static final String GOLD = "gold";
     private static final Logger LOGGER = LoggerFactory.getLogger(GoldPriceModel.class);
 
     private Map<String, GoldPrice> entries;
@@ -35,7 +38,7 @@ public class GoldPriceModel {
     private void initKafkaProperties() {
         kafkaProperties = new Properties();
         kafkaProperties.setProperty("bootstrap.servers", "localhost:9092");
-        kafkaProperties.setProperty("group.id", "test");
+        kafkaProperties.setProperty("group.id", "priceMW");
         kafkaProperties.setProperty("enable.auto.commit", "true");
         kafkaProperties.setProperty("auto.commit.interval.ms", "1000");
         kafkaProperties.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -45,7 +48,7 @@ public class GoldPriceModel {
 
     private void initKafkaConsumer() {
         consumer = new KafkaConsumer<>(kafkaProperties);
-        consumer.subscribe(Arrays.asList(PRICE));
+        consumer.subscribe(Arrays.asList(GOLD));
     }
 
     private void startKafkaListen() {

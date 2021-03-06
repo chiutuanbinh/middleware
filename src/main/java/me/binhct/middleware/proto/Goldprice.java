@@ -14,8 +14,8 @@ public final class Goldprice {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface goldpriceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:goldprice)
+  public interface PGoldpriceOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:PGoldprice)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -44,18 +44,18 @@ public final class Goldprice {
     long getTimestamp();
   }
   /**
-   * Protobuf type {@code goldprice}
+   * Protobuf type {@code PGoldprice}
    */
-  public  static final class goldprice extends
+  public  static final class PGoldprice extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:goldprice)
-      goldpriceOrBuilder {
+      // @@protoc_insertion_point(message_implements:PGoldprice)
+      PGoldpriceOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use goldprice.newBuilder() to construct.
-    private goldprice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use PGoldprice.newBuilder() to construct.
+    private PGoldprice(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private goldprice() {
+    private PGoldprice() {
       gType_ = "";
       buy_ = 0;
       sell_ = 0;
@@ -67,7 +67,7 @@ public final class Goldprice {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private goldprice(
+    private PGoldprice(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -128,14 +128,14 @@ public final class Goldprice {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return me.binhct.middleware.proto.Goldprice.internal_static_goldprice_descriptor;
+      return me.binhct.middleware.proto.Goldprice.internal_static_PGoldprice_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return me.binhct.middleware.proto.Goldprice.internal_static_goldprice_fieldAccessorTable
+      return me.binhct.middleware.proto.Goldprice.internal_static_PGoldprice_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              me.binhct.middleware.proto.Goldprice.goldprice.class, me.binhct.middleware.proto.Goldprice.goldprice.Builder.class);
+              me.binhct.middleware.proto.Goldprice.PGoldprice.class, me.binhct.middleware.proto.Goldprice.PGoldprice.Builder.class);
     }
 
     public static final int GTYPE_FIELD_NUMBER = 1;
@@ -256,10 +256,10 @@ public final class Goldprice {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof me.binhct.middleware.proto.Goldprice.goldprice)) {
+      if (!(obj instanceof me.binhct.middleware.proto.Goldprice.PGoldprice)) {
         return super.equals(obj);
       }
-      me.binhct.middleware.proto.Goldprice.goldprice other = (me.binhct.middleware.proto.Goldprice.goldprice) obj;
+      me.binhct.middleware.proto.Goldprice.PGoldprice other = (me.binhct.middleware.proto.Goldprice.PGoldprice) obj;
 
       boolean result = true;
       result = result && getGType()
@@ -295,69 +295,69 @@ public final class Goldprice {
       return hash;
     }
 
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(byte[] data)
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(java.io.InputStream input)
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseDelimitedFrom(java.io.InputStream input)
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseDelimitedFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static me.binhct.middleware.proto.Goldprice.goldprice parseFrom(
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -369,7 +369,7 @@ public final class Goldprice {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(me.binhct.middleware.proto.Goldprice.goldprice prototype) {
+    public static Builder newBuilder(me.binhct.middleware.proto.Goldprice.PGoldprice prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -384,25 +384,25 @@ public final class Goldprice {
       return builder;
     }
     /**
-     * Protobuf type {@code goldprice}
+     * Protobuf type {@code PGoldprice}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:goldprice)
-        me.binhct.middleware.proto.Goldprice.goldpriceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:PGoldprice)
+        me.binhct.middleware.proto.Goldprice.PGoldpriceOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return me.binhct.middleware.proto.Goldprice.internal_static_goldprice_descriptor;
+        return me.binhct.middleware.proto.Goldprice.internal_static_PGoldprice_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return me.binhct.middleware.proto.Goldprice.internal_static_goldprice_fieldAccessorTable
+        return me.binhct.middleware.proto.Goldprice.internal_static_PGoldprice_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                me.binhct.middleware.proto.Goldprice.goldprice.class, me.binhct.middleware.proto.Goldprice.goldprice.Builder.class);
+                me.binhct.middleware.proto.Goldprice.PGoldprice.class, me.binhct.middleware.proto.Goldprice.PGoldprice.Builder.class);
       }
 
-      // Construct using me.binhct.middleware.proto.Goldprice.goldprice.newBuilder()
+      // Construct using me.binhct.middleware.proto.Goldprice.PGoldprice.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -432,23 +432,23 @@ public final class Goldprice {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return me.binhct.middleware.proto.Goldprice.internal_static_goldprice_descriptor;
+        return me.binhct.middleware.proto.Goldprice.internal_static_PGoldprice_descriptor;
       }
 
-      public me.binhct.middleware.proto.Goldprice.goldprice getDefaultInstanceForType() {
-        return me.binhct.middleware.proto.Goldprice.goldprice.getDefaultInstance();
+      public me.binhct.middleware.proto.Goldprice.PGoldprice getDefaultInstanceForType() {
+        return me.binhct.middleware.proto.Goldprice.PGoldprice.getDefaultInstance();
       }
 
-      public me.binhct.middleware.proto.Goldprice.goldprice build() {
-        me.binhct.middleware.proto.Goldprice.goldprice result = buildPartial();
+      public me.binhct.middleware.proto.Goldprice.PGoldprice build() {
+        me.binhct.middleware.proto.Goldprice.PGoldprice result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public me.binhct.middleware.proto.Goldprice.goldprice buildPartial() {
-        me.binhct.middleware.proto.Goldprice.goldprice result = new me.binhct.middleware.proto.Goldprice.goldprice(this);
+      public me.binhct.middleware.proto.Goldprice.PGoldprice buildPartial() {
+        me.binhct.middleware.proto.Goldprice.PGoldprice result = new me.binhct.middleware.proto.Goldprice.PGoldprice(this);
         result.gType_ = gType_;
         result.buy_ = buy_;
         result.sell_ = sell_;
@@ -484,16 +484,16 @@ public final class Goldprice {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof me.binhct.middleware.proto.Goldprice.goldprice) {
-          return mergeFrom((me.binhct.middleware.proto.Goldprice.goldprice)other);
+        if (other instanceof me.binhct.middleware.proto.Goldprice.PGoldprice) {
+          return mergeFrom((me.binhct.middleware.proto.Goldprice.PGoldprice)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(me.binhct.middleware.proto.Goldprice.goldprice other) {
-        if (other == me.binhct.middleware.proto.Goldprice.goldprice.getDefaultInstance()) return this;
+      public Builder mergeFrom(me.binhct.middleware.proto.Goldprice.PGoldprice other) {
+        if (other == me.binhct.middleware.proto.Goldprice.PGoldprice.getDefaultInstance()) return this;
         if (!other.getGType().isEmpty()) {
           gType_ = other.gType_;
           onChanged();
@@ -520,11 +520,11 @@ public final class Goldprice {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        me.binhct.middleware.proto.Goldprice.goldprice parsedMessage = null;
+        me.binhct.middleware.proto.Goldprice.PGoldprice parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (me.binhct.middleware.proto.Goldprice.goldprice) e.getUnfinishedMessage();
+          parsedMessage = (me.binhct.middleware.proto.Goldprice.PGoldprice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -691,49 +691,49 @@ public final class Goldprice {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:goldprice)
+      // @@protoc_insertion_point(builder_scope:PGoldprice)
     }
 
-    // @@protoc_insertion_point(class_scope:goldprice)
-    private static final me.binhct.middleware.proto.Goldprice.goldprice DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:PGoldprice)
+    private static final me.binhct.middleware.proto.Goldprice.PGoldprice DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new me.binhct.middleware.proto.Goldprice.goldprice();
+      DEFAULT_INSTANCE = new me.binhct.middleware.proto.Goldprice.PGoldprice();
     }
 
-    public static me.binhct.middleware.proto.Goldprice.goldprice getDefaultInstance() {
+    public static me.binhct.middleware.proto.Goldprice.PGoldprice getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<goldprice>
-        PARSER = new com.google.protobuf.AbstractParser<goldprice>() {
-      public goldprice parsePartialFrom(
+    private static final com.google.protobuf.Parser<PGoldprice>
+        PARSER = new com.google.protobuf.AbstractParser<PGoldprice>() {
+      public PGoldprice parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new goldprice(input, extensionRegistry);
+        return new PGoldprice(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<goldprice> parser() {
+    public static com.google.protobuf.Parser<PGoldprice> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<goldprice> getParserForType() {
+    public com.google.protobuf.Parser<PGoldprice> getParserForType() {
       return PARSER;
     }
 
-    public me.binhct.middleware.proto.Goldprice.goldprice getDefaultInstanceForType() {
+    public me.binhct.middleware.proto.Goldprice.PGoldprice getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_goldprice_descriptor;
+    internal_static_PGoldprice_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_goldprice_fieldAccessorTable;
+      internal_static_PGoldprice_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -743,10 +743,10 @@ public final class Goldprice {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017goldprice.proto\"H\n\tgoldprice\022\r\n\005gType\030" +
-      "\001 \001(\t\022\013\n\003buy\030\002 \001(\005\022\014\n\004sell\030\003 \001(\005\022\021\n\ttime" +
-      "stamp\030\004 \001(\003B\034\n\032me.binhct.middleware.prot" +
-      "ob\006proto3"
+      "\n\017goldprice.proto\"I\n\nPGoldprice\022\r\n\005gType" +
+      "\030\001 \001(\t\022\013\n\003buy\030\002 \001(\005\022\014\n\004sell\030\003 \001(\005\022\021\n\ttim" +
+      "estamp\030\004 \001(\003B\034\n\032me.binhct.middleware.pro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -760,11 +760,11 @@ public final class Goldprice {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_goldprice_descriptor =
+    internal_static_PGoldprice_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_goldprice_fieldAccessorTable = new
+    internal_static_PGoldprice_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_goldprice_descriptor,
+        internal_static_PGoldprice_descriptor,
         new java.lang.String[] { "GType", "Buy", "Sell", "Timestamp", });
   }
 

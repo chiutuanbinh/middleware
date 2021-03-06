@@ -1,0 +1,76 @@
+package me.binhct.middleware.article;
+
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+@Component
+public class ArticleModel {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ArticleModel.class);
+    public static final ArticleModel INSTANCE = new ArticleModel();
+    private static final String ARTICLE = "article";
+    private ArticleRepository repository;
+    private Properties kafkaProperties;
+    private KafkaConsumer<String, Article> consumer;
+    private Thread listener;
+
+    private ArticleModel() {
+        super();
+        repository = ArticleMongoRepository.INSTANCE;
+        initKafkaProperties();
+        initKafkaConsumer();
+        startKafkaListen();
+    }
+
+    private void initKafkaProperties(){
+        kafkaProperties = new Properties();
+        kafkaProperties.setProperty("bootstrap.servers", "localhost:9092");
+        kafkaProperties.setProperty("group.id", "articleMW");
+        kafkaProperties.setProperty("enable.auto.commit", "true");
+        kafkaProperties.setProperty("auto.commit.interval.ms", "1000");
+        kafkaProperties.setProperty("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
+        kafkaProperties.setProperty("value.deserializer", "me.binhct.middleware.article.ArticleDeserializer");
+    }
+
+    private void initKafkaConsumer() {
+        consumer = new KafkaConsumer<>(kafkaProperties);
+        consumer.subscribe(Arrays.asList(ARTICLE));
+    }
+
+    private void startKafkaListen() {
+        listener = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                LOGGER.info("article listener started");
+                while (true) {
+                    ConsumerRecords<String, Article> records = consumer.poll(Duration.ofMillis(1000));
+                    for (ConsumerRecord<String, Article> record : records){
+                        LOGGER.info(record.value().toString());
+                        repository.addArticle(record.value());
+                    }
+                }
+            }
+        });
+        listener.start();
+    }
+
+    public List<Article> getLatest(long count){
+        return repository.getLatestId(count);
+    }
+
+    public List<Article> getByPubisher(String publisher, int count){
+        return repository.getByPublisherLatest(publisher, count);
+    }
+
+    public Article get(String id) {
+        return repository.getArticle(id);
+    }
+}
