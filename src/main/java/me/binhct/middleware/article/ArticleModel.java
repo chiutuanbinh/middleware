@@ -10,9 +10,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
-@Component
 public class ArticleModel {
     private static final Logger LOGGER = LoggerFactory.getLogger(ArticleModel.class);
     public static final ArticleModel INSTANCE = new ArticleModel();
@@ -24,10 +22,12 @@ public class ArticleModel {
 
     private ArticleModel() {
         super();
-        repository = ArticleMongoRepository.INSTANCE;
         initKafkaProperties();
         initKafkaConsumer();
         startKafkaListen();
+    }
+    public void setRepository(ArticleRepository repository) {
+        this.repository = repository;
     }
 
     private void initKafkaProperties(){
@@ -53,7 +53,7 @@ public class ArticleModel {
                 while (true) {
                     ConsumerRecords<String, Article> records = consumer.poll(Duration.ofMillis(1000));
                     for (ConsumerRecord<String, Article> record : records){
-                        LOGGER.info(record.value().toString());
+                        // LOGGER.info(record.value().toString());
                         repository.addArticle(record.value());
                     }
                 }
@@ -62,7 +62,7 @@ public class ArticleModel {
         listener.start();
     }
 
-    public List<Article> getLatest(long count){
+    public List<Article> getLatest(int count){
         return repository.getLatestId(count);
     }
 
@@ -72,5 +72,9 @@ public class ArticleModel {
 
     public Article get(String id) {
         return repository.getArticle(id);
+    }
+
+    public List<String> getAllPublisher(){
+        return repository.getAllPublisher();
     }
 }

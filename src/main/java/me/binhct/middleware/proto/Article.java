@@ -129,6 +129,16 @@ public final class Article {
      */
     com.google.protobuf.ByteString
         getIdBytes();
+
+    /**
+     * <code>string description = 11;</code>
+     */
+    java.lang.String getDescription();
+    /**
+     * <code>string description = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getDescriptionBytes();
   }
   /**
    * Protobuf type {@code PArticle}
@@ -152,6 +162,7 @@ public final class Article {
       paragraph_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       mediaUrl_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       id_ = "";
+      description_ = "";
     }
 
     @java.lang.Override
@@ -245,6 +256,12 @@ public final class Article {
               java.lang.String s = input.readStringRequireUtf8();
 
               id_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           }
@@ -547,6 +564,40 @@ public final class Article {
       }
     }
 
+    public static final int DESCRIPTION_FIELD_NUMBER = 11;
+    private volatile java.lang.Object description_;
+    /**
+     * <code>string description = 11;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string description = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -585,6 +636,9 @@ public final class Article {
       }
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, id_);
+      }
+      if (!getDescriptionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, description_);
       }
       unknownFields.writeTo(output);
     }
@@ -637,6 +691,9 @@ public final class Article {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, id_);
       }
+      if (!getDescriptionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, description_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -671,6 +728,8 @@ public final class Article {
           .equals(other.getMediaUrlList());
       result = result && getId()
           .equals(other.getId());
+      result = result && getDescription()
+          .equals(other.getDescription());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -707,6 +766,8 @@ public final class Article {
       }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -854,6 +915,8 @@ public final class Article {
         bitField0_ = (bitField0_ & ~0x00000080);
         id_ = "";
 
+        description_ = "";
+
         return this;
       }
 
@@ -899,6 +962,7 @@ public final class Article {
         }
         result.mediaUrl_ = mediaUrl_;
         result.id_ = id_;
+        result.description_ = description_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -992,6 +1056,10 @@ public final class Article {
         }
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getDescription().isEmpty()) {
+          description_ = other.description_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -1674,6 +1742,75 @@ public final class Article {
         onChanged();
         return this;
       }
+
+      private java.lang.Object description_ = "";
+      /**
+       * <code>string description = 11;</code>
+       */
+      public java.lang.String getDescription() {
+        java.lang.Object ref = description_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          description_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string description = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDescriptionBytes() {
+        java.lang.Object ref = description_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          description_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string description = 11;</code>
+       */
+      public Builder setDescription(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        description_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 11;</code>
+       */
+      public Builder clearDescription() {
+        
+        description_ = getDefaultInstance().getDescription();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string description = 11;</code>
+       */
+      public Builder setDescriptionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        description_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -1737,12 +1874,13 @@ public final class Article {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rarticle.proto\"\252\001\n\010PArticle\022\r\n\005title\030\001 " +
+      "\n\rarticle.proto\"\277\001\n\010PArticle\022\r\n\005title\030\001 " +
       "\001(\t\022\023\n\013oriKeywords\030\002 \003(\t\022\023\n\013oriCategory\030" +
       "\003 \001(\t\022\016\n\006oriUrl\030\004 \001(\t\022\021\n\tpublisher\030\006 \001(\t" +
       "\022\021\n\ttimestamp\030\007 \001(\003\022\021\n\tparagraph\030\010 \003(\t\022\020" +
-      "\n\010mediaUrl\030\t \003(\t\022\n\n\002id\030\n \001(\tB\034\n\032me.binhc" +
-      "t.middleware.protob\006proto3"
+      "\n\010mediaUrl\030\t \003(\t\022\n\n\002id\030\n \001(\t\022\023\n\013descript" +
+      "ion\030\013 \001(\tB\034\n\032me.binhct.middleware.protob" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1761,7 +1899,7 @@ public final class Article {
     internal_static_PArticle_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PArticle_descriptor,
-        new java.lang.String[] { "Title", "OriKeywords", "OriCategory", "OriUrl", "Publisher", "Timestamp", "Paragraph", "MediaUrl", "Id", });
+        new java.lang.String[] { "Title", "OriKeywords", "OriCategory", "OriUrl", "Publisher", "Timestamp", "Paragraph", "MediaUrl", "Id", "Description", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

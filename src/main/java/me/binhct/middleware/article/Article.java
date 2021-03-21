@@ -7,22 +7,19 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import org.bson.types.ObjectId;
 
-import me.binhct.middleware.proto.Article.PArticle;
 @JsonInclude(Include.NON_NULL)
 public final class Article {
-
-    public static Article fromProto(PArticle pArticle) {
-        Article article = new Article();
-        article.oriCategory = pArticle.getOriCategory();
-        article.oriKeywords = pArticle.getOriKeywordsList();
-        article.oriUrl = pArticle.getOriUrl();
-        article.publisher = pArticle.getPublisher();
-        article.title = pArticle.getTitle();
-        article.paragraphs = pArticle.getParagraphList();
-        article.timestamp = pArticle.getTimestamp();
-        article.aid = pArticle.getId();
-        return article;
-    }
+    public static final String AID = "aid";
+    public static final String TITLE = "title";
+    public static final String PUBLISHER = "publisher";
+    public static final String ORI_CATEGORY = "oriCategory";
+    public static final String ORI_KEYWORDS = "oriKeywords";
+    public static final String ORI_URL = "oriUrl";
+    public static final String TIME_STAMP = "timestamp";
+    public static final String PARAGRAPH = "paragraph";
+    public static final String MEDIA_URLS = "mediaURLs";
+    public static final String DESCRIPTION = "description";
+   
 
     private ObjectId id;
     private String publisher;
@@ -34,10 +31,11 @@ public final class Article {
     private List<String> paragraphs;
     private String aid;
     private List<String> mediaURLs;
+    private String description;
 
     public Article() {
     }
-    public Article(ObjectId id, String publisher, String title, String oriCategory, List<String> oriKeywords, String oriUrl, long timestamp, List<String> paragraphs, String aid, List<String> mediaURLs) {
+    public Article(ObjectId id, String publisher, String title, String oriCategory, List<String> oriKeywords, String oriUrl, long timestamp, List<String> paragraphs, String aid, List<String> mediaURLs, String description) {
         this.id = id;
         this.publisher = publisher;
         this.title = title;
@@ -48,6 +46,7 @@ public final class Article {
         this.paragraphs = paragraphs;
         this.aid = aid;
         this.mediaURLs = mediaURLs;
+        this.description = description;
     }
 
     public ObjectId getId() {
@@ -128,9 +127,16 @@ public final class Article {
         this.mediaURLs = mediaURLs;
     }
 
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
-        String sValue = String.format("%s %s %d %s", aid, title, timestamp, paragraphs.get(0));
+        String sValue = String.format("%s %s %d %s", aid, title, timestamp, getDescription());
         return sValue;
     }
 }
