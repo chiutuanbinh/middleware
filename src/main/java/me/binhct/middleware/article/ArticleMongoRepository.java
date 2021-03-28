@@ -52,6 +52,7 @@ public class ArticleMongoRepository implements ArticleRepository {
                 Updates.set(Article.ORI_KEYWORDS, article.getOriKeywords()),
                 Updates.set(Article.ORI_URL, article.getOriUrl()),
                 Updates.set(Article.DESCRIPTION, article.getDescription()),
+                Updates.set(Article.PARAGRAPH, article.getParagraph()),
                 Updates.set(Article.MEDIA_URLS, article.getMediaURLs()));
         UpdateResult res = articleCollection.updateOne(Filters.eq(Article.AID, article.getAid()), updateAll,
                 new UpdateOptions().upsert(true));
@@ -102,11 +103,10 @@ public class ArticleMongoRepository implements ArticleRepository {
         try {
 
             for (Article a : articleCollection.find().sort(Sorts.descending(Article.TIME_STAMP)).limit(count)
-                    .projection(Projections.fields(Projections.include(Article.TITLE, Article.PUBLISHER, Article.TIME_STAMP, Article.DESCRIPTION, Article.MEDIA_URLS),
-                            Projections.excludeId()))) {
+                    .projection(Projections.fields(Projections.include(Article.AID, Article.TITLE, Article.PUBLISHER,
+                            Article.TIME_STAMP, Article.DESCRIPTION, Article.MEDIA_URLS), Projections.excludeId()))) {
                 res.add(a);
             }
-            
 
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
@@ -120,8 +120,9 @@ public class ArticleMongoRepository implements ArticleRepository {
         try {
             Bson filter = Filters.eq(Article.PUBLISHER, publisher);
             Bson sort = Sorts.descending(Article.TIME_STAMP);
-            Bson projection = Projections.fields(Projections.include(Article.TITLE, Article.TIME_STAMP, Article.DESCRIPTION, Article.PARAGRAPH, Article.ORI_KEYWORDS));
-            for (Article a : articleCollection.find(filter).sort(sort).limit(count).projection(projection)){
+            Bson projection = Projections.fields(Projections.include(Article.TITLE, Article.TIME_STAMP,
+                    Article.DESCRIPTION, Article.PARAGRAPH, Article.ORI_KEYWORDS, Article.MEDIA_URLS));
+            for (Article a : articleCollection.find(filter).sort(sort).limit(count).projection(projection)) {
                 res.add(a);
             }
             return res;
@@ -135,7 +136,7 @@ public class ArticleMongoRepository implements ArticleRepository {
     public List<String> getAllPublisher() {
         List<String> result = new ArrayList<>();
         try {
-            for (String publisher : articleCollection.distinct(Article.PUBLISHER, String.class)){
+            for (String publisher : articleCollection.distinct(Article.PUBLISHER, String.class)) {
                 result.add(publisher);
             }
         } catch (Exception e) {

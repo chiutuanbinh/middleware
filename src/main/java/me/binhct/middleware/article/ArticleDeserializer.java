@@ -16,7 +16,7 @@ public class ArticleDeserializer implements Deserializer<Article> {
         article.setOriUrl(pArticle.getOriUrl());
         article.setPublisher(pArticle.getPublisher());
         article.setTitle(pArticle.getTitle());
-        article.setParagraphs(pArticle.getParagraphList());
+        article.setParagraph(pArticle.getParagraphList());
         article.setTimestamp(pArticle.getTimestamp());
         article.setAid(pArticle.getId());
         article.setMediaURLs(pArticle.getMediaUrlList());

@@ -5,13 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import me.binhct.middleware.article.ArticleModel;
 import me.binhct.middleware.article.ArticleMongoRepository;
+import me.binhct.middleware.cluster.ClusterModel;
+import me.binhct.middleware.cluster.ClusterMongoRepository;
 
 @SpringBootApplication
 public class MiddlewareApplication {
 
 	public static void main(String[] args) {
 		ArticleModel.INSTANCE.setRepository(ArticleMongoRepository.INSTANCE);
-		
+		ClusterModel.INSTANCE.setRepository(ClusterMongoRepository.INSTANCE);
 		SpringApplication.run(MiddlewareApplication.class, args);
 	}
 

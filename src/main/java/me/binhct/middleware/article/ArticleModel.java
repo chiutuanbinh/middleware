@@ -53,7 +53,7 @@ public class ArticleModel {
                 while (true) {
                     ConsumerRecords<String, Article> records = consumer.poll(Duration.ofMillis(1000));
                     for (ConsumerRecord<String, Article> record : records){
-                        // LOGGER.info(record.value().toString());
+                        // LOGGER.info(record.value().getParagraphs().toString());
                         repository.addArticle(record.value());
                     }
                 }

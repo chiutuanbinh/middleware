@@ -28,14 +28,14 @@ public final class Article {
     private List<String> oriKeywords;
     private String oriUrl;
     private long timestamp;
-    private List<String> paragraphs;
+    private List<String> paragraph;
     private String aid;
     private List<String> mediaURLs;
     private String description;
 
     public Article() {
     }
-    public Article(ObjectId id, String publisher, String title, String oriCategory, List<String> oriKeywords, String oriUrl, long timestamp, List<String> paragraphs, String aid, List<String> mediaURLs, String description) {
+    public Article(ObjectId id, String publisher, String title, String oriCategory, List<String> oriKeywords, String oriUrl, long timestamp, List<String> paragraph, String aid, List<String> mediaURLs, String description) {
         this.id = id;
         this.publisher = publisher;
         this.title = title;
@@ -43,7 +43,7 @@ public final class Article {
         this.oriKeywords = oriKeywords;
         this.oriUrl = oriUrl;
         this.timestamp = timestamp;
-        this.paragraphs = paragraphs;
+        this.paragraph = paragraph;
         this.aid = aid;
         this.mediaURLs = mediaURLs;
         this.description = description;
@@ -103,12 +103,12 @@ public final class Article {
         this.timestamp = timestamp;
     }
 
-    public List<String> getParagraphs() {
-        return paragraphs;
+    public List<String> getParagraph() {
+        return paragraph;
     }
 
-    public void setParagraphs(List<String> paragraphs) {
-        this.paragraphs = paragraphs;
+    public void setParagraph(List<String> paragraph) {
+        this.paragraph = paragraph;
     }
 
     public String getAid() {

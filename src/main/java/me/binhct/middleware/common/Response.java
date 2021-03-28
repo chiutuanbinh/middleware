@@ -9,6 +9,10 @@ public class Response {
         private String code;
         private String message;
 
+        public Error() {
+            super();
+        }
+
         public Error(String code, String message) {
             this.code = code;
             this.message = message;
