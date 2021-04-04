@@ -70,6 +70,10 @@ public class ArticleModel {
         return repository.getByPublisherLatest(publisher, count);
     }
 
+    public List<Article> getByCategory(String category, int count){
+        return repository.getByCategoryLatest(category, count);
+    }
+
     public Article get(String id) {
         return repository.getArticle(id);
     }
@@ -77,4 +81,10 @@ public class ArticleModel {
     public List<String> getAllPublisher(){
         return repository.getAllPublisher();
     }
+
+    public List<String> getAllCategory(){
+        return repository.getAllCategory();
+    }
+
+
 }

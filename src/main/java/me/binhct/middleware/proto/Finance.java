@@ -5380,6 +5380,2960 @@ public final class Finance {
 
   }
 
+  public interface CompanyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Company)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string full_name = 1;</code>
+     */
+    java.lang.String getFullName();
+    /**
+     * <code>string full_name = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getFullNameBytes();
+
+    /**
+     * <code>string english_name = 2;</code>
+     */
+    java.lang.String getEnglishName();
+    /**
+     * <code>string english_name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getEnglishNameBytes();
+
+    /**
+     * <code>string short_name = 3;</code>
+     */
+    java.lang.String getShortName();
+    /**
+     * <code>string short_name = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getShortNameBytes();
+
+    /**
+     * <code>string address = 4;</code>
+     */
+    java.lang.String getAddress();
+    /**
+     * <code>string address = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getAddressBytes();
+
+    /**
+     * <code>string website = 5;</code>
+     */
+    java.lang.String getWebsite();
+    /**
+     * <code>string website = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getWebsiteBytes();
+
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    java.util.List<me.binhct.middleware.proto.Finance.Company.ManagementEntity> 
+        getManagementEntitiesList();
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    me.binhct.middleware.proto.Finance.Company.ManagementEntity getManagementEntities(int index);
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    int getManagementEntitiesCount();
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    java.util.List<? extends me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder> 
+        getManagementEntitiesOrBuilderList();
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder getManagementEntitiesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code Company}
+   */
+  public  static final class Company extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Company)
+      CompanyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Company.newBuilder() to construct.
+    private Company(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Company() {
+      fullName_ = "";
+      englishName_ = "";
+      shortName_ = "";
+      address_ = "";
+      website_ = "";
+      managementEntities_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Company(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              fullName_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              englishName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              shortName_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              address_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              website_ = s;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                managementEntities_ = new java.util.ArrayList<me.binhct.middleware.proto.Finance.Company.ManagementEntity>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              managementEntities_.add(
+                  input.readMessage(me.binhct.middleware.proto.Finance.Company.ManagementEntity.parser(), extensionRegistry));
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          managementEntities_ = java.util.Collections.unmodifiableList(managementEntities_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return me.binhct.middleware.proto.Finance.internal_static_Company_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return me.binhct.middleware.proto.Finance.internal_static_Company_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              me.binhct.middleware.proto.Finance.Company.class, me.binhct.middleware.proto.Finance.Company.Builder.class);
+    }
+
+    public interface ManagementEntityOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:Company.ManagementEntity)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <code>string name = 1;</code>
+       */
+      java.lang.String getName();
+      /**
+       * <code>string name = 1;</code>
+       */
+      com.google.protobuf.ByteString
+          getNameBytes();
+
+      /**
+       * <code>string position = 2;</code>
+       */
+      java.lang.String getPosition();
+      /**
+       * <code>string position = 2;</code>
+       */
+      com.google.protobuf.ByteString
+          getPositionBytes();
+    }
+    /**
+     * Protobuf type {@code Company.ManagementEntity}
+     */
+    public  static final class ManagementEntity extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:Company.ManagementEntity)
+        ManagementEntityOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use ManagementEntity.newBuilder() to construct.
+      private ManagementEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private ManagementEntity() {
+        name_ = "";
+        position_ = "";
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ManagementEntity(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        int mutable_bitField0_ = 0;
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!parseUnknownFieldProto3(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                name_ = s;
+                break;
+              }
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                position_ = s;
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return me.binhct.middleware.proto.Finance.internal_static_Company_ManagementEntity_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return me.binhct.middleware.proto.Finance.internal_static_Company_ManagementEntity_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                me.binhct.middleware.proto.Finance.Company.ManagementEntity.class, me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder.class);
+      }
+
+      public static final int NAME_FIELD_NUMBER = 1;
+      private volatile java.lang.Object name_;
+      /**
+       * <code>string name = 1;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int POSITION_FIELD_NUMBER = 2;
+      private volatile java.lang.Object position_;
+      /**
+       * <code>string position = 2;</code>
+       */
+      public java.lang.String getPosition() {
+        java.lang.Object ref = position_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = 
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          position_ = s;
+          return s;
+        }
+      }
+      /**
+       * <code>string position = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPositionBytes() {
+        java.lang.Object ref = position_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          position_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (!getNameBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+        }
+        if (!getPositionBytes().isEmpty()) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, position_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!getNameBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+        }
+        if (!getPositionBytes().isEmpty()) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, position_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof me.binhct.middleware.proto.Finance.Company.ManagementEntity)) {
+          return super.equals(obj);
+        }
+        me.binhct.middleware.proto.Finance.Company.ManagementEntity other = (me.binhct.middleware.proto.Finance.Company.ManagementEntity) obj;
+
+        boolean result = true;
+        result = result && getName()
+            .equals(other.getName());
+        result = result && getPosition()
+            .equals(other.getPosition());
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+        hash = (37 * hash) + POSITION_FIELD_NUMBER;
+        hash = (53 * hash) + getPosition().hashCode();
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(me.binhct.middleware.proto.Finance.Company.ManagementEntity prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * Protobuf type {@code Company.ManagementEntity}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:Company.ManagementEntity)
+          me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return me.binhct.middleware.proto.Finance.internal_static_Company_ManagementEntity_descriptor;
+        }
+
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return me.binhct.middleware.proto.Finance.internal_static_Company_ManagementEntity_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  me.binhct.middleware.proto.Finance.Company.ManagementEntity.class, me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder.class);
+        }
+
+        // Construct using me.binhct.middleware.proto.Finance.Company.ManagementEntity.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        public Builder clear() {
+          super.clear();
+          name_ = "";
+
+          position_ = "";
+
+          return this;
+        }
+
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return me.binhct.middleware.proto.Finance.internal_static_Company_ManagementEntity_descriptor;
+        }
+
+        public me.binhct.middleware.proto.Finance.Company.ManagementEntity getDefaultInstanceForType() {
+          return me.binhct.middleware.proto.Finance.Company.ManagementEntity.getDefaultInstance();
+        }
+
+        public me.binhct.middleware.proto.Finance.Company.ManagementEntity build() {
+          me.binhct.middleware.proto.Finance.Company.ManagementEntity result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        public me.binhct.middleware.proto.Finance.Company.ManagementEntity buildPartial() {
+          me.binhct.middleware.proto.Finance.Company.ManagementEntity result = new me.binhct.middleware.proto.Finance.Company.ManagementEntity(this);
+          result.name_ = name_;
+          result.position_ = position_;
+          onBuilt();
+          return result;
+        }
+
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof me.binhct.middleware.proto.Finance.Company.ManagementEntity) {
+            return mergeFrom((me.binhct.middleware.proto.Finance.Company.ManagementEntity)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(me.binhct.middleware.proto.Finance.Company.ManagementEntity other) {
+          if (other == me.binhct.middleware.proto.Finance.Company.ManagementEntity.getDefaultInstance()) return this;
+          if (!other.getName().isEmpty()) {
+            name_ = other.name_;
+            onChanged();
+          }
+          if (!other.getPosition().isEmpty()) {
+            position_ = other.position_;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          me.binhct.middleware.proto.Finance.Company.ManagementEntity parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (me.binhct.middleware.proto.Finance.Company.ManagementEntity) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+
+        private java.lang.Object name_ = "";
+        /**
+         * <code>string name = 1;</code>
+         */
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public com.google.protobuf.ByteString
+            getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public Builder setName(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          name_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public Builder clearName() {
+          
+          name_ = getDefaultInstance().getName();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string name = 1;</code>
+         */
+        public Builder setNameBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          name_ = value;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object position_ = "";
+        /**
+         * <code>string position = 2;</code>
+         */
+        public java.lang.String getPosition() {
+          java.lang.Object ref = position_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            position_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         * <code>string position = 2;</code>
+         */
+        public com.google.protobuf.ByteString
+            getPositionBytes() {
+          java.lang.Object ref = position_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b = 
+                com.google.protobuf.ByteString.copyFromUtf8(
+                    (java.lang.String) ref);
+            position_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         * <code>string position = 2;</code>
+         */
+        public Builder setPosition(
+            java.lang.String value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  
+          position_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string position = 2;</code>
+         */
+        public Builder clearPosition() {
+          
+          position_ = getDefaultInstance().getPosition();
+          onChanged();
+          return this;
+        }
+        /**
+         * <code>string position = 2;</code>
+         */
+        public Builder setPositionBytes(
+            com.google.protobuf.ByteString value) {
+          if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+          
+          position_ = value;
+          onChanged();
+          return this;
+        }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFieldsProto3(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:Company.ManagementEntity)
+      }
+
+      // @@protoc_insertion_point(class_scope:Company.ManagementEntity)
+      private static final me.binhct.middleware.proto.Finance.Company.ManagementEntity DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new me.binhct.middleware.proto.Finance.Company.ManagementEntity();
+      }
+
+      public static me.binhct.middleware.proto.Finance.Company.ManagementEntity getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ManagementEntity>
+          PARSER = new com.google.protobuf.AbstractParser<ManagementEntity>() {
+        public ManagementEntity parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ManagementEntity(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<ManagementEntity> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ManagementEntity> getParserForType() {
+        return PARSER;
+      }
+
+      public me.binhct.middleware.proto.Finance.Company.ManagementEntity getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    private int bitField0_;
+    public static final int FULL_NAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object fullName_;
+    /**
+     * <code>string full_name = 1;</code>
+     */
+    public java.lang.String getFullName() {
+      java.lang.Object ref = fullName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fullName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string full_name = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFullNameBytes() {
+      java.lang.Object ref = fullName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fullName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENGLISH_NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object englishName_;
+    /**
+     * <code>string english_name = 2;</code>
+     */
+    public java.lang.String getEnglishName() {
+      java.lang.Object ref = englishName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        englishName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string english_name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getEnglishNameBytes() {
+      java.lang.Object ref = englishName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        englishName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHORT_NAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object shortName_;
+    /**
+     * <code>string short_name = 3;</code>
+     */
+    public java.lang.String getShortName() {
+      java.lang.Object ref = shortName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shortName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string short_name = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getShortNameBytes() {
+      java.lang.Object ref = shortName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shortName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 4;
+    private volatile java.lang.Object address_;
+    /**
+     * <code>string address = 4;</code>
+     */
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string address = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int WEBSITE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object website_;
+    /**
+     * <code>string website = 5;</code>
+     */
+    public java.lang.String getWebsite() {
+      java.lang.Object ref = website_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        website_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string website = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getWebsiteBytes() {
+      java.lang.Object ref = website_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        website_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MANAGEMENT_ENTITIES_FIELD_NUMBER = 6;
+    private java.util.List<me.binhct.middleware.proto.Finance.Company.ManagementEntity> managementEntities_;
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    public java.util.List<me.binhct.middleware.proto.Finance.Company.ManagementEntity> getManagementEntitiesList() {
+      return managementEntities_;
+    }
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    public java.util.List<? extends me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder> 
+        getManagementEntitiesOrBuilderList() {
+      return managementEntities_;
+    }
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    public int getManagementEntitiesCount() {
+      return managementEntities_.size();
+    }
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    public me.binhct.middleware.proto.Finance.Company.ManagementEntity getManagementEntities(int index) {
+      return managementEntities_.get(index);
+    }
+    /**
+     * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+     */
+    public me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder getManagementEntitiesOrBuilder(
+        int index) {
+      return managementEntities_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getFullNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fullName_);
+      }
+      if (!getEnglishNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, englishName_);
+      }
+      if (!getShortNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, shortName_);
+      }
+      if (!getAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, address_);
+      }
+      if (!getWebsiteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, website_);
+      }
+      for (int i = 0; i < managementEntities_.size(); i++) {
+        output.writeMessage(6, managementEntities_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getFullNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fullName_);
+      }
+      if (!getEnglishNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, englishName_);
+      }
+      if (!getShortNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, shortName_);
+      }
+      if (!getAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, address_);
+      }
+      if (!getWebsiteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, website_);
+      }
+      for (int i = 0; i < managementEntities_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, managementEntities_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof me.binhct.middleware.proto.Finance.Company)) {
+        return super.equals(obj);
+      }
+      me.binhct.middleware.proto.Finance.Company other = (me.binhct.middleware.proto.Finance.Company) obj;
+
+      boolean result = true;
+      result = result && getFullName()
+          .equals(other.getFullName());
+      result = result && getEnglishName()
+          .equals(other.getEnglishName());
+      result = result && getShortName()
+          .equals(other.getShortName());
+      result = result && getAddress()
+          .equals(other.getAddress());
+      result = result && getWebsite()
+          .equals(other.getWebsite());
+      result = result && getManagementEntitiesList()
+          .equals(other.getManagementEntitiesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + FULL_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFullName().hashCode();
+      hash = (37 * hash) + ENGLISH_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getEnglishName().hashCode();
+      hash = (37 * hash) + SHORT_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getShortName().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      hash = (37 * hash) + WEBSITE_FIELD_NUMBER;
+      hash = (53 * hash) + getWebsite().hashCode();
+      if (getManagementEntitiesCount() > 0) {
+        hash = (37 * hash) + MANAGEMENT_ENTITIES_FIELD_NUMBER;
+        hash = (53 * hash) + getManagementEntitiesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static me.binhct.middleware.proto.Finance.Company parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(me.binhct.middleware.proto.Finance.Company prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Company}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Company)
+        me.binhct.middleware.proto.Finance.CompanyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return me.binhct.middleware.proto.Finance.internal_static_Company_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return me.binhct.middleware.proto.Finance.internal_static_Company_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                me.binhct.middleware.proto.Finance.Company.class, me.binhct.middleware.proto.Finance.Company.Builder.class);
+      }
+
+      // Construct using me.binhct.middleware.proto.Finance.Company.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getManagementEntitiesFieldBuilder();
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        fullName_ = "";
+
+        englishName_ = "";
+
+        shortName_ = "";
+
+        address_ = "";
+
+        website_ = "";
+
+        if (managementEntitiesBuilder_ == null) {
+          managementEntities_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          managementEntitiesBuilder_.clear();
+        }
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return me.binhct.middleware.proto.Finance.internal_static_Company_descriptor;
+      }
+
+      public me.binhct.middleware.proto.Finance.Company getDefaultInstanceForType() {
+        return me.binhct.middleware.proto.Finance.Company.getDefaultInstance();
+      }
+
+      public me.binhct.middleware.proto.Finance.Company build() {
+        me.binhct.middleware.proto.Finance.Company result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public me.binhct.middleware.proto.Finance.Company buildPartial() {
+        me.binhct.middleware.proto.Finance.Company result = new me.binhct.middleware.proto.Finance.Company(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.fullName_ = fullName_;
+        result.englishName_ = englishName_;
+        result.shortName_ = shortName_;
+        result.address_ = address_;
+        result.website_ = website_;
+        if (managementEntitiesBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
+            managementEntities_ = java.util.Collections.unmodifiableList(managementEntities_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.managementEntities_ = managementEntities_;
+        } else {
+          result.managementEntities_ = managementEntitiesBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof me.binhct.middleware.proto.Finance.Company) {
+          return mergeFrom((me.binhct.middleware.proto.Finance.Company)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(me.binhct.middleware.proto.Finance.Company other) {
+        if (other == me.binhct.middleware.proto.Finance.Company.getDefaultInstance()) return this;
+        if (!other.getFullName().isEmpty()) {
+          fullName_ = other.fullName_;
+          onChanged();
+        }
+        if (!other.getEnglishName().isEmpty()) {
+          englishName_ = other.englishName_;
+          onChanged();
+        }
+        if (!other.getShortName().isEmpty()) {
+          shortName_ = other.shortName_;
+          onChanged();
+        }
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          onChanged();
+        }
+        if (!other.getWebsite().isEmpty()) {
+          website_ = other.website_;
+          onChanged();
+        }
+        if (managementEntitiesBuilder_ == null) {
+          if (!other.managementEntities_.isEmpty()) {
+            if (managementEntities_.isEmpty()) {
+              managementEntities_ = other.managementEntities_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureManagementEntitiesIsMutable();
+              managementEntities_.addAll(other.managementEntities_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.managementEntities_.isEmpty()) {
+            if (managementEntitiesBuilder_.isEmpty()) {
+              managementEntitiesBuilder_.dispose();
+              managementEntitiesBuilder_ = null;
+              managementEntities_ = other.managementEntities_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              managementEntitiesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getManagementEntitiesFieldBuilder() : null;
+            } else {
+              managementEntitiesBuilder_.addAllMessages(other.managementEntities_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        me.binhct.middleware.proto.Finance.Company parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (me.binhct.middleware.proto.Finance.Company) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object fullName_ = "";
+      /**
+       * <code>string full_name = 1;</code>
+       */
+      public java.lang.String getFullName() {
+        java.lang.Object ref = fullName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fullName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string full_name = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFullNameBytes() {
+        java.lang.Object ref = fullName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fullName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string full_name = 1;</code>
+       */
+      public Builder setFullName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        fullName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string full_name = 1;</code>
+       */
+      public Builder clearFullName() {
+        
+        fullName_ = getDefaultInstance().getFullName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string full_name = 1;</code>
+       */
+      public Builder setFullNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        fullName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object englishName_ = "";
+      /**
+       * <code>string english_name = 2;</code>
+       */
+      public java.lang.String getEnglishName() {
+        java.lang.Object ref = englishName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          englishName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string english_name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getEnglishNameBytes() {
+        java.lang.Object ref = englishName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          englishName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string english_name = 2;</code>
+       */
+      public Builder setEnglishName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        englishName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string english_name = 2;</code>
+       */
+      public Builder clearEnglishName() {
+        
+        englishName_ = getDefaultInstance().getEnglishName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string english_name = 2;</code>
+       */
+      public Builder setEnglishNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        englishName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object shortName_ = "";
+      /**
+       * <code>string short_name = 3;</code>
+       */
+      public java.lang.String getShortName() {
+        java.lang.Object ref = shortName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          shortName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string short_name = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getShortNameBytes() {
+        java.lang.Object ref = shortName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shortName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string short_name = 3;</code>
+       */
+      public Builder setShortName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shortName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string short_name = 3;</code>
+       */
+      public Builder clearShortName() {
+        
+        shortName_ = getDefaultInstance().getShortName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string short_name = 3;</code>
+       */
+      public Builder setShortNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        shortName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <code>string address = 4;</code>
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string address = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string address = 4;</code>
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        address_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 4;</code>
+       */
+      public Builder clearAddress() {
+        
+        address_ = getDefaultInstance().getAddress();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 4;</code>
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        address_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object website_ = "";
+      /**
+       * <code>string website = 5;</code>
+       */
+      public java.lang.String getWebsite() {
+        java.lang.Object ref = website_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          website_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string website = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getWebsiteBytes() {
+        java.lang.Object ref = website_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          website_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string website = 5;</code>
+       */
+      public Builder setWebsite(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        website_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string website = 5;</code>
+       */
+      public Builder clearWebsite() {
+        
+        website_ = getDefaultInstance().getWebsite();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string website = 5;</code>
+       */
+      public Builder setWebsiteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        website_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<me.binhct.middleware.proto.Finance.Company.ManagementEntity> managementEntities_ =
+        java.util.Collections.emptyList();
+      private void ensureManagementEntitiesIsMutable() {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
+          managementEntities_ = new java.util.ArrayList<me.binhct.middleware.proto.Finance.Company.ManagementEntity>(managementEntities_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          me.binhct.middleware.proto.Finance.Company.ManagementEntity, me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder, me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder> managementEntitiesBuilder_;
+
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public java.util.List<me.binhct.middleware.proto.Finance.Company.ManagementEntity> getManagementEntitiesList() {
+        if (managementEntitiesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(managementEntities_);
+        } else {
+          return managementEntitiesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public int getManagementEntitiesCount() {
+        if (managementEntitiesBuilder_ == null) {
+          return managementEntities_.size();
+        } else {
+          return managementEntitiesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public me.binhct.middleware.proto.Finance.Company.ManagementEntity getManagementEntities(int index) {
+        if (managementEntitiesBuilder_ == null) {
+          return managementEntities_.get(index);
+        } else {
+          return managementEntitiesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder setManagementEntities(
+          int index, me.binhct.middleware.proto.Finance.Company.ManagementEntity value) {
+        if (managementEntitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureManagementEntitiesIsMutable();
+          managementEntities_.set(index, value);
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder setManagementEntities(
+          int index, me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder builderForValue) {
+        if (managementEntitiesBuilder_ == null) {
+          ensureManagementEntitiesIsMutable();
+          managementEntities_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder addManagementEntities(me.binhct.middleware.proto.Finance.Company.ManagementEntity value) {
+        if (managementEntitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureManagementEntitiesIsMutable();
+          managementEntities_.add(value);
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder addManagementEntities(
+          int index, me.binhct.middleware.proto.Finance.Company.ManagementEntity value) {
+        if (managementEntitiesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureManagementEntitiesIsMutable();
+          managementEntities_.add(index, value);
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder addManagementEntities(
+          me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder builderForValue) {
+        if (managementEntitiesBuilder_ == null) {
+          ensureManagementEntitiesIsMutable();
+          managementEntities_.add(builderForValue.build());
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder addManagementEntities(
+          int index, me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder builderForValue) {
+        if (managementEntitiesBuilder_ == null) {
+          ensureManagementEntitiesIsMutable();
+          managementEntities_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder addAllManagementEntities(
+          java.lang.Iterable<? extends me.binhct.middleware.proto.Finance.Company.ManagementEntity> values) {
+        if (managementEntitiesBuilder_ == null) {
+          ensureManagementEntitiesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, managementEntities_);
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder clearManagementEntities() {
+        if (managementEntitiesBuilder_ == null) {
+          managementEntities_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public Builder removeManagementEntities(int index) {
+        if (managementEntitiesBuilder_ == null) {
+          ensureManagementEntitiesIsMutable();
+          managementEntities_.remove(index);
+          onChanged();
+        } else {
+          managementEntitiesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder getManagementEntitiesBuilder(
+          int index) {
+        return getManagementEntitiesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder getManagementEntitiesOrBuilder(
+          int index) {
+        if (managementEntitiesBuilder_ == null) {
+          return managementEntities_.get(index);  } else {
+          return managementEntitiesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public java.util.List<? extends me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder> 
+           getManagementEntitiesOrBuilderList() {
+        if (managementEntitiesBuilder_ != null) {
+          return managementEntitiesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(managementEntities_);
+        }
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder addManagementEntitiesBuilder() {
+        return getManagementEntitiesFieldBuilder().addBuilder(
+            me.binhct.middleware.proto.Finance.Company.ManagementEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder addManagementEntitiesBuilder(
+          int index) {
+        return getManagementEntitiesFieldBuilder().addBuilder(
+            index, me.binhct.middleware.proto.Finance.Company.ManagementEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .Company.ManagementEntity management_entities = 6;</code>
+       */
+      public java.util.List<me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder> 
+           getManagementEntitiesBuilderList() {
+        return getManagementEntitiesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          me.binhct.middleware.proto.Finance.Company.ManagementEntity, me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder, me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder> 
+          getManagementEntitiesFieldBuilder() {
+        if (managementEntitiesBuilder_ == null) {
+          managementEntitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              me.binhct.middleware.proto.Finance.Company.ManagementEntity, me.binhct.middleware.proto.Finance.Company.ManagementEntity.Builder, me.binhct.middleware.proto.Finance.Company.ManagementEntityOrBuilder>(
+                  managementEntities_,
+                  ((bitField0_ & 0x00000020) == 0x00000020),
+                  getParentForChildren(),
+                  isClean());
+          managementEntities_ = null;
+        }
+        return managementEntitiesBuilder_;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Company)
+    }
+
+    // @@protoc_insertion_point(class_scope:Company)
+    private static final me.binhct.middleware.proto.Finance.Company DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new me.binhct.middleware.proto.Finance.Company();
+    }
+
+    public static me.binhct.middleware.proto.Finance.Company getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Company>
+        PARSER = new com.google.protobuf.AbstractParser<Company>() {
+      public Company parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Company(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Company> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Company> getParserForType() {
+      return PARSER;
+    }
+
+    public me.binhct.middleware.proto.Finance.Company getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StockOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Stock)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string code = 1;</code>
+     */
+    java.lang.String getCode();
+    /**
+     * <code>string code = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+
+    /**
+     * <code>.Company company = 2;</code>
+     */
+    boolean hasCompany();
+    /**
+     * <code>.Company company = 2;</code>
+     */
+    me.binhct.middleware.proto.Finance.Company getCompany();
+    /**
+     * <code>.Company company = 2;</code>
+     */
+    me.binhct.middleware.proto.Finance.CompanyOrBuilder getCompanyOrBuilder();
+
+    /**
+     * <code>uint64 price = 3;</code>
+     */
+    long getPrice();
+
+    /**
+     * <code>uint64 volume = 4;</code>
+     */
+    long getVolume();
+  }
+  /**
+   * Protobuf type {@code Stock}
+   */
+  public  static final class Stock extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Stock)
+      StockOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Stock.newBuilder() to construct.
+    private Stock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Stock() {
+      code_ = "";
+      price_ = 0L;
+      volume_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Stock(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              code_ = s;
+              break;
+            }
+            case 18: {
+              me.binhct.middleware.proto.Finance.Company.Builder subBuilder = null;
+              if (company_ != null) {
+                subBuilder = company_.toBuilder();
+              }
+              company_ = input.readMessage(me.binhct.middleware.proto.Finance.Company.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(company_);
+                company_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+
+              price_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              volume_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return me.binhct.middleware.proto.Finance.internal_static_Stock_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return me.binhct.middleware.proto.Finance.internal_static_Stock_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              me.binhct.middleware.proto.Finance.Stock.class, me.binhct.middleware.proto.Finance.Stock.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object code_;
+    /**
+     * <code>string code = 1;</code>
+     */
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string code = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COMPANY_FIELD_NUMBER = 2;
+    private me.binhct.middleware.proto.Finance.Company company_;
+    /**
+     * <code>.Company company = 2;</code>
+     */
+    public boolean hasCompany() {
+      return company_ != null;
+    }
+    /**
+     * <code>.Company company = 2;</code>
+     */
+    public me.binhct.middleware.proto.Finance.Company getCompany() {
+      return company_ == null ? me.binhct.middleware.proto.Finance.Company.getDefaultInstance() : company_;
+    }
+    /**
+     * <code>.Company company = 2;</code>
+     */
+    public me.binhct.middleware.proto.Finance.CompanyOrBuilder getCompanyOrBuilder() {
+      return getCompany();
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 3;
+    private long price_;
+    /**
+     * <code>uint64 price = 3;</code>
+     */
+    public long getPrice() {
+      return price_;
+    }
+
+    public static final int VOLUME_FIELD_NUMBER = 4;
+    private long volume_;
+    /**
+     * <code>uint64 volume = 4;</code>
+     */
+    public long getVolume() {
+      return volume_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getCodeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
+      }
+      if (company_ != null) {
+        output.writeMessage(2, getCompany());
+      }
+      if (price_ != 0L) {
+        output.writeUInt64(3, price_);
+      }
+      if (volume_ != 0L) {
+        output.writeUInt64(4, volume_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getCodeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
+      }
+      if (company_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getCompany());
+      }
+      if (price_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, price_);
+      }
+      if (volume_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, volume_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof me.binhct.middleware.proto.Finance.Stock)) {
+        return super.equals(obj);
+      }
+      me.binhct.middleware.proto.Finance.Stock other = (me.binhct.middleware.proto.Finance.Stock) obj;
+
+      boolean result = true;
+      result = result && getCode()
+          .equals(other.getCode());
+      result = result && (hasCompany() == other.hasCompany());
+      if (hasCompany()) {
+        result = result && getCompany()
+            .equals(other.getCompany());
+      }
+      result = result && (getPrice()
+          == other.getPrice());
+      result = result && (getVolume()
+          == other.getVolume());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+      if (hasCompany()) {
+        hash = (37 * hash) + COMPANY_FIELD_NUMBER;
+        hash = (53 * hash) + getCompany().hashCode();
+      }
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPrice());
+      hash = (37 * hash) + VOLUME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getVolume());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static me.binhct.middleware.proto.Finance.Stock parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(me.binhct.middleware.proto.Finance.Stock prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Stock}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Stock)
+        me.binhct.middleware.proto.Finance.StockOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return me.binhct.middleware.proto.Finance.internal_static_Stock_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return me.binhct.middleware.proto.Finance.internal_static_Stock_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                me.binhct.middleware.proto.Finance.Stock.class, me.binhct.middleware.proto.Finance.Stock.Builder.class);
+      }
+
+      // Construct using me.binhct.middleware.proto.Finance.Stock.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        code_ = "";
+
+        if (companyBuilder_ == null) {
+          company_ = null;
+        } else {
+          company_ = null;
+          companyBuilder_ = null;
+        }
+        price_ = 0L;
+
+        volume_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return me.binhct.middleware.proto.Finance.internal_static_Stock_descriptor;
+      }
+
+      public me.binhct.middleware.proto.Finance.Stock getDefaultInstanceForType() {
+        return me.binhct.middleware.proto.Finance.Stock.getDefaultInstance();
+      }
+
+      public me.binhct.middleware.proto.Finance.Stock build() {
+        me.binhct.middleware.proto.Finance.Stock result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public me.binhct.middleware.proto.Finance.Stock buildPartial() {
+        me.binhct.middleware.proto.Finance.Stock result = new me.binhct.middleware.proto.Finance.Stock(this);
+        result.code_ = code_;
+        if (companyBuilder_ == null) {
+          result.company_ = company_;
+        } else {
+          result.company_ = companyBuilder_.build();
+        }
+        result.price_ = price_;
+        result.volume_ = volume_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof me.binhct.middleware.proto.Finance.Stock) {
+          return mergeFrom((me.binhct.middleware.proto.Finance.Stock)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(me.binhct.middleware.proto.Finance.Stock other) {
+        if (other == me.binhct.middleware.proto.Finance.Stock.getDefaultInstance()) return this;
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
+          onChanged();
+        }
+        if (other.hasCompany()) {
+          mergeCompany(other.getCompany());
+        }
+        if (other.getPrice() != 0L) {
+          setPrice(other.getPrice());
+        }
+        if (other.getVolume() != 0L) {
+          setVolume(other.getVolume());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        me.binhct.middleware.proto.Finance.Stock parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (me.binhct.middleware.proto.Finance.Stock) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object code_ = "";
+      /**
+       * <code>string code = 1;</code>
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string code = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string code = 1;</code>
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        code_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 1;</code>
+       */
+      public Builder clearCode() {
+        
+        code_ = getDefaultInstance().getCode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 1;</code>
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        code_ = value;
+        onChanged();
+        return this;
+      }
+
+      private me.binhct.middleware.proto.Finance.Company company_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          me.binhct.middleware.proto.Finance.Company, me.binhct.middleware.proto.Finance.Company.Builder, me.binhct.middleware.proto.Finance.CompanyOrBuilder> companyBuilder_;
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public boolean hasCompany() {
+        return companyBuilder_ != null || company_ != null;
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public me.binhct.middleware.proto.Finance.Company getCompany() {
+        if (companyBuilder_ == null) {
+          return company_ == null ? me.binhct.middleware.proto.Finance.Company.getDefaultInstance() : company_;
+        } else {
+          return companyBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public Builder setCompany(me.binhct.middleware.proto.Finance.Company value) {
+        if (companyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          company_ = value;
+          onChanged();
+        } else {
+          companyBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public Builder setCompany(
+          me.binhct.middleware.proto.Finance.Company.Builder builderForValue) {
+        if (companyBuilder_ == null) {
+          company_ = builderForValue.build();
+          onChanged();
+        } else {
+          companyBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public Builder mergeCompany(me.binhct.middleware.proto.Finance.Company value) {
+        if (companyBuilder_ == null) {
+          if (company_ != null) {
+            company_ =
+              me.binhct.middleware.proto.Finance.Company.newBuilder(company_).mergeFrom(value).buildPartial();
+          } else {
+            company_ = value;
+          }
+          onChanged();
+        } else {
+          companyBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public Builder clearCompany() {
+        if (companyBuilder_ == null) {
+          company_ = null;
+          onChanged();
+        } else {
+          company_ = null;
+          companyBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public me.binhct.middleware.proto.Finance.Company.Builder getCompanyBuilder() {
+        
+        onChanged();
+        return getCompanyFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      public me.binhct.middleware.proto.Finance.CompanyOrBuilder getCompanyOrBuilder() {
+        if (companyBuilder_ != null) {
+          return companyBuilder_.getMessageOrBuilder();
+        } else {
+          return company_ == null ?
+              me.binhct.middleware.proto.Finance.Company.getDefaultInstance() : company_;
+        }
+      }
+      /**
+       * <code>.Company company = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          me.binhct.middleware.proto.Finance.Company, me.binhct.middleware.proto.Finance.Company.Builder, me.binhct.middleware.proto.Finance.CompanyOrBuilder> 
+          getCompanyFieldBuilder() {
+        if (companyBuilder_ == null) {
+          companyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              me.binhct.middleware.proto.Finance.Company, me.binhct.middleware.proto.Finance.Company.Builder, me.binhct.middleware.proto.Finance.CompanyOrBuilder>(
+                  getCompany(),
+                  getParentForChildren(),
+                  isClean());
+          company_ = null;
+        }
+        return companyBuilder_;
+      }
+
+      private long price_ ;
+      /**
+       * <code>uint64 price = 3;</code>
+       */
+      public long getPrice() {
+        return price_;
+      }
+      /**
+       * <code>uint64 price = 3;</code>
+       */
+      public Builder setPrice(long value) {
+        
+        price_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 price = 3;</code>
+       */
+      public Builder clearPrice() {
+        
+        price_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long volume_ ;
+      /**
+       * <code>uint64 volume = 4;</code>
+       */
+      public long getVolume() {
+        return volume_;
+      }
+      /**
+       * <code>uint64 volume = 4;</code>
+       */
+      public Builder setVolume(long value) {
+        
+        volume_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>uint64 volume = 4;</code>
+       */
+      public Builder clearVolume() {
+        
+        volume_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Stock)
+    }
+
+    // @@protoc_insertion_point(class_scope:Stock)
+    private static final me.binhct.middleware.proto.Finance.Stock DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new me.binhct.middleware.proto.Finance.Stock();
+    }
+
+    public static me.binhct.middleware.proto.Finance.Stock getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Stock>
+        PARSER = new com.google.protobuf.AbstractParser<Stock>() {
+      public Stock parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Stock(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Stock> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Stock> getParserForType() {
+      return PARSER;
+    }
+
+    public me.binhct.middleware.proto.Finance.Stock getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_FinancialStatement_descriptor;
   private static final 
@@ -5425,6 +8379,21 @@ public final class Finance {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_FinancialStatement_Equity_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Company_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Company_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Company_ManagementEntity_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Company_ManagementEntity_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Stock_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Stock_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5450,8 +8419,16 @@ public final class Finance {
       "+.FinancialStatement.Liability.ShortTerm" +
       "Debt\022B\n\016long_term_debt\030\002 \001(\0132*.Financial" +
       "Statement.Liability.LongTermDebt\032\017\n\rShor" +
-      "tTermDebt\032\016\n\014LongTermDebt\032\010\n\006EquityB\034\n\032m" +
-      "e.binhct.middleware.protob\006proto3"
+      "tTermDebt\032\016\n\014LongTermDebt\032\010\n\006Equity\"\324\001\n\007" +
+      "Company\022\021\n\tfull_name\030\001 \001(\t\022\024\n\014english_na" +
+      "me\030\002 \001(\t\022\022\n\nshort_name\030\003 \001(\t\022\017\n\007address\030" +
+      "\004 \001(\t\022\017\n\007website\030\005 \001(\t\0226\n\023management_ent" +
+      "ities\030\006 \003(\0132\031.Company.ManagementEntity\0322" +
+      "\n\020ManagementEntity\022\014\n\004name\030\001 \001(\t\022\020\n\010posi" +
+      "tion\030\002 \001(\t\"O\n\005Stock\022\014\n\004code\030\001 \001(\t\022\031\n\007com" +
+      "pany\030\002 \001(\0132\010.Company\022\r\n\005price\030\003 \001(\004\022\016\n\006v" +
+      "olume\030\004 \001(\004B\034\n\032me.binhct.middleware.prot" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5519,6 +8496,24 @@ public final class Finance {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FinancialStatement_Equity_descriptor,
         new java.lang.String[] { });
+    internal_static_Company_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_Company_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Company_descriptor,
+        new java.lang.String[] { "FullName", "EnglishName", "ShortName", "Address", "Website", "ManagementEntities", });
+    internal_static_Company_ManagementEntity_descriptor =
+      internal_static_Company_descriptor.getNestedTypes().get(0);
+    internal_static_Company_ManagementEntity_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Company_ManagementEntity_descriptor,
+        new java.lang.String[] { "Name", "Position", });
+    internal_static_Stock_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_Stock_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Stock_descriptor,
+        new java.lang.String[] { "Code", "Company", "Price", "Volume", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

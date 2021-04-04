@@ -53,7 +53,8 @@ public class ArticleMongoRepository implements ArticleRepository {
                 Updates.set(Article.ORI_URL, article.getOriUrl()),
                 Updates.set(Article.DESCRIPTION, article.getDescription()),
                 Updates.set(Article.PARAGRAPH, article.getParagraph()),
-                Updates.set(Article.MEDIA_URLS, article.getMediaURLs()));
+                Updates.set(Article.MEDIA_URLS, article.getMediaURLs()),
+                Updates.set(Article.CATEGORY, article.getCategory()));
         UpdateResult res = articleCollection.updateOne(Filters.eq(Article.AID, article.getAid()), updateAll,
                 new UpdateOptions().upsert(true));
         if (res.wasAcknowledged()) {
@@ -138,6 +139,37 @@ public class ArticleMongoRepository implements ArticleRepository {
         try {
             for (String publisher : articleCollection.distinct(Article.PUBLISHER, String.class)) {
                 result.add(publisher);
+            }
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return result;
+    }
+
+    @Override
+    public List<Article> getByCategoryLatest(String category, int count) {
+        List<Article> res = new ArrayList<>();
+        try {
+            Bson filter = Filters.eq(Article.CATEGORY, category);
+            Bson sort = Sorts.descending(Article.TIME_STAMP);
+            Bson projection = Projections.fields(Projections.include(Article.TITLE, Article.PUBLISHER, Article.TIME_STAMP,
+                    Article.DESCRIPTION, Article.PARAGRAPH, Article.ORI_KEYWORDS, Article.MEDIA_URLS));
+            for (Article a : articleCollection.find(filter).sort(sort).limit(count).projection(projection)) {
+                res.add(a);
+            }
+            return res;
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return null;
+    }
+
+    @Override
+    public List<String> getAllCategory() {
+        List<String> result = new ArrayList<>();
+        try {
+            for (String category: articleCollection.distinct(Article.CATEGORY,String.class)){
+                result.add(category);
             }
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);

@@ -42,8 +42,7 @@ public class ClusterMongoRepository implements ClusterRepository {
 
     @Override
     public long addCluster(Cluster cluster) {
-        Bson updateAll = Updates.combine(Updates.set(Cluster.CID, cluster.getCid()),
-                Updates.set(Cluster.MEMBER, cluster.getMember()));
+        Bson updateAll = Updates.combine(Updates.set(Cluster.MEMBER, cluster.getMember()));
         UpdateResult res = clusterCollection.updateOne(Filters.eq(Cluster.CID, cluster.getId()), updateAll,
                 new UpdateOptions().upsert(true));
 

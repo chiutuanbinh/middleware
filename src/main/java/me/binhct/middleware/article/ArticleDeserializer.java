@@ -21,6 +21,7 @@ public class ArticleDeserializer implements Deserializer<Article> {
         article.setAid(pArticle.getId());
         article.setMediaURLs(pArticle.getMediaUrlList());
         article.setDescription(pArticle.getDescription());
+        article.setCategory(pArticle.getCategory());
         return article;
     }
     @Override

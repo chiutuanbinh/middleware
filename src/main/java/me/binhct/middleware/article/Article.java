@@ -19,6 +19,7 @@ public final class Article {
     public static final String PARAGRAPH = "paragraph";
     public static final String MEDIA_URLS = "mediaURLs";
     public static final String DESCRIPTION = "description";
+    public static final String CATEGORY = "category";
    
 
     private ObjectId id;
@@ -32,10 +33,11 @@ public final class Article {
     private String aid;
     private List<String> mediaURLs;
     private String description;
+    private String category;
 
     public Article() {
     }
-    public Article(ObjectId id, String publisher, String title, String oriCategory, List<String> oriKeywords, String oriUrl, long timestamp, List<String> paragraph, String aid, List<String> mediaURLs, String description) {
+    public Article(ObjectId id, String publisher, String title, String oriCategory, List<String> oriKeywords, String oriUrl, long timestamp, List<String> paragraph, String aid, List<String> mediaURLs, String description, String category) {
         this.id = id;
         this.publisher = publisher;
         this.title = title;
@@ -47,6 +49,7 @@ public final class Article {
         this.aid = aid;
         this.mediaURLs = mediaURLs;
         this.description = description;
+        this.category = category;
     }
 
     public ObjectId getId() {
@@ -132,6 +135,13 @@ public final class Article {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getCategory() {
+        return this.category;
+    }
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     @Override

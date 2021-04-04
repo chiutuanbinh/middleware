@@ -18,6 +18,7 @@ import me.binhct.middleware.common.Response;
 public class ArticleController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/article/latest", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Response getArticles(@RequestParam(name = "limit", defaultValue = "10") int count) {
@@ -31,6 +32,7 @@ public class ArticleController {
         return response;
     }
 
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/article/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Response getArticle(@PathVariable String id) {
@@ -43,7 +45,8 @@ public class ArticleController {
         return response;
     }
 
-    @GetMapping(value = "/publisher/{publisher}/article", produces = MediaType.APPLICATION_JSON_VALUE)
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(value = "/publisher/{publisher}/latest", produces = MediaType.APPLICATION_JSON_VALUE)
     public Response getByPublisher(@RequestParam(name = "limit", defaultValue = "10") int count,
             @PathVariable String publisher) {
         Response response = new Response();
@@ -61,6 +64,33 @@ public class ArticleController {
         Response response = new Response();
         try {
             response.setValue(ArticleModel.INSTANCE.getAllPublisher());
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return response;
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Response getAllCategory() {
+        Response response = new Response();
+        try {
+            response.setValue(ArticleModel.INSTANCE.getAllCategory());
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return response;
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(value = "/category/{category}/latest", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Response getByCategory(@RequestParam(name = "limit", defaultValue = "10") int count,
+            @PathVariable String category) {
+        Response response = new Response();
+        try {
+            response.setValue(ArticleModel.INSTANCE.getByCategory(category, count));
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }

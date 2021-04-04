@@ -9,5 +9,7 @@ public interface ArticleRepository {
     public List<Article> getArticles(List<String> id);
     public List<Article> getLatestId(int count);
     public List<Article> getByPublisherLatest(String publisher, int count);
+    public List<Article> getByCategoryLatest(String category, int count);
     public List<String> getAllPublisher();
+    public List<String> getAllCategory();
 }

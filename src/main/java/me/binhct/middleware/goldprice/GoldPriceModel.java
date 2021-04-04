@@ -18,8 +18,6 @@ import ch.qos.logback.classic.Level;
 @Component
 public class GoldPriceModel {
     public static final GoldPriceModel Instance = new GoldPriceModel();
-    private static final String PNJ = "pnj";
-    private static final String SJC = "sjc";
     private static final String GOLD = "gold";
     private static final Logger LOGGER = LoggerFactory.getLogger(GoldPriceModel.class);
 
@@ -58,6 +56,7 @@ public class GoldPriceModel {
                 while (true) {
                     ConsumerRecords<String, GoldPrice> records = consumer.poll(Duration.ofMillis(100));
                     for (ConsumerRecord<String, GoldPrice> record : records){
+                        LOGGER.info(record.key());
                         LOGGER.info(record.value().toString());
                         entries.put(record.key(), record.value());
                     }
@@ -68,6 +67,7 @@ public class GoldPriceModel {
     }
 
     public GoldPrice getPrice(String gType) {
+        LOGGER.info(entries.toString());
         return entries.get(gType);
     }
 
