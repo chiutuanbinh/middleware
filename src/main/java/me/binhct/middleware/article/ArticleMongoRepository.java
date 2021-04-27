@@ -99,16 +99,22 @@ public class ArticleMongoRepository implements ArticleRepository {
     }
 
     @Override
-    public List<Article> getLatestId(int count) {
+    public List<Article> getLatestArticles(int count) {
+        return getLatestArticles(0, count);
+    }
+
+    public List<Article> getLatestArticles(int offset, int count){
         List<Article> res = new ArrayList<>();
         try {
-
-            for (Article a : articleCollection.find().sort(Sorts.descending(Article.TIME_STAMP)).limit(count)
+            int skipCount = 0;
+            for (Article a : articleCollection.find().sort(Sorts.descending(Article.TIME_STAMP)).limit(offset + count)
                     .projection(Projections.fields(Projections.include(Article.AID, Article.TITLE, Article.PUBLISHER,
-                            Article.TIME_STAMP, Article.DESCRIPTION, Article.MEDIA_URLS), Projections.excludeId()))) {
+                            Article.TIME_STAMP, Article.DESCRIPTION, Article.PARAGRAPH, Article.MEDIA_URLS), Projections.excludeId()))) {
+                if (skipCount ++ < offset){
+                    continue;
+                }
                 res.add(a);
             }
-
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }

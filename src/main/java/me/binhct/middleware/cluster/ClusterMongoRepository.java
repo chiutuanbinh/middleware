@@ -70,7 +70,6 @@ public class ClusterMongoRepository implements ClusterRepository {
             return cluster;
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
-            //TODO: handle exception
         }
         return null;
     }
@@ -86,7 +85,6 @@ public class ClusterMongoRepository implements ClusterRepository {
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }
-        // TODO Auto-generated method stub
         return res;
     }
 

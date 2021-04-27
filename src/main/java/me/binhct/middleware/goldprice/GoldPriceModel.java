@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import ch.qos.logback.classic.Level;
 
 @Component
 public class GoldPriceModel {
@@ -72,17 +71,6 @@ public class GoldPriceModel {
     }
 
     public static void main(String[] args) {
-        ((ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME)).setLevel(Level.INFO);
-
-        while (true) {
-            ConsumerRecords<String, GoldPrice> records = Instance.consumer.poll(Duration.ofMillis(1000));
-            for (ConsumerRecord<String, GoldPrice> record : records) {
-                if (record == null || record.value() == null){
-                    continue;
-                }
-                LOGGER.info(record.value().toString());
-            }
-        }
-
+        
     }
 }

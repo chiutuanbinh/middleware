@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import me.binhct.middleware.cluster.ClusterModel;
+import me.binhct.middleware.cluster.ClusterMongoRepository;
 import me.binhct.middleware.common.Response;
 
 @RestController
 public class ArticleController {
     private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
-
+    static{
+        ArticleModel.INSTANCE.setRepository(ArticleMongoRepository.INSTANCE);
+        ClusterModel.INSTANCE.setRepository(ClusterMongoRepository.INSTANCE);
+    }
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping(value = "/article/latest", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
@@ -39,6 +44,19 @@ public class ArticleController {
         Response response = new Response();
         try {
             response.setValue(ArticleModel.INSTANCE.get(id));
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage(), e);
+        }
+        return response;
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping(value = "/article/search", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public Response searchArticle(@RequestParam(name = "term", defaultValue = "") String term) {
+        Response response = new Response();
+        try {
+            response.setValue(ArticleModel.INSTANCE.search(term));
         } catch (Exception e) {
             LOGGER.error(e.getMessage(), e);
         }

@@ -16,6 +16,7 @@ public class ArticleModel {
     public static final ArticleModel INSTANCE = new ArticleModel();
     private static final String ARTICLE = "article";
     private ArticleRepository repository;
+    private ArticleTextSearch textSearch=ArticleTextSearch.INSTANCE;
     private Properties kafkaProperties;
     private KafkaConsumer<String, Article> consumer;
     private Thread listener;
@@ -25,6 +26,7 @@ public class ArticleModel {
         initKafkaProperties();
         initKafkaConsumer();
         startKafkaListen();
+        
     }
     public void setRepository(ArticleRepository repository) {
         this.repository = repository;
@@ -55,6 +57,7 @@ public class ArticleModel {
                     for (ConsumerRecord<String, Article> record : records){
                         // LOGGER.info(record.value().getParagraphs().toString());
                         repository.addArticle(record.value());
+                        textSearch.indexArticle(record.value());
                     }
                 }
             }
@@ -63,7 +66,7 @@ public class ArticleModel {
     }
 
     public List<Article> getLatest(int count){
-        return repository.getLatestId(count);
+        return repository.getLatestArticles(count);
     }
 
     public List<Article> getByPubisher(String publisher, int count){
@@ -86,5 +89,8 @@ public class ArticleModel {
         return repository.getAllCategory();
     }
 
+    public List<Article> search(String searchTerm){
+        return textSearch.searchArticle(searchTerm);
+    }
 
 }
